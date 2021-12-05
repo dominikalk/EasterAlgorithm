@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Easter Algorithm</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="shortcut icon" type="image/jpg" href="./images/ssh.svg"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <!-- Navigation Bar -->
+        <header>
+            <div class="nav-wrapper">
+                <a href="index.html">
+                    <span>Easter Algorithm</span>
+                </a>
+            </div>
+        </header>
+        <main>
+           <form method="post" action="cgi-bin/EasterAlgorithm.py">
+                <label>Year: <input type="number" id="year" name="year"></label>
+
+                <label>
+                    <input type="radio" name="dateType" value="numerically" tabindex="4" > Numerically (e.g. 12/04/2020)
+                </label>
+                <label>
+                    <input type="radio" name="dateType" value="verbosely" tabindex="4" > Verbosely (e.g. 12th April 2020)
+                </label>
+                <label>
+                    <input type="radio" name="dateType" value="both" tabindex="4" > Both
+                </label>
+
+                <button type="submit">Calculate Date</button>
+           </form>
+        </main>
+        <!-- Footer -->
+        <footer>
+            <div class="footer-wrapper">
+            </div>
+        </footer>
+    </body>
+</html>
