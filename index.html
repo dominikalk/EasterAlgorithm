@@ -4,45 +4,30 @@
         <meta charset="utf-8">
         <title>Easter Algorithm</title>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="shortcut icon" type="image/jpg" href="./images/ssh.svg"/>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inika&display=swap" rel="stylesheet">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Inika&display=swap');
+        </style>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
     <body>
-        <!-- Navigation Bar -->
-        <!-- <header>
-            <div class="nav-wrapper">
-                <a href="index.html">
-                    <span>Easter Algorithm</span>
-                </a>
-            </div>
-        </header> -->
         <main>
-            <div class='container'>
-                <h1>Easter Algorithm</h1>
-                <form method="post" action="cgi-bin/EasterAlgorithm.py">
-                    <label>Year: <input type="number" id="year" name="year"></label>
-    
-                    <label>
-                        <input type="radio" name="dateType" value="numerically" tabindex="4" > Numerically (e.g. 12/04/2020)
-                    </label>
-                    <label>
-                        <input type="radio" name="dateType" value="verbosely" tabindex="4" > Verbosely (e.g. 12th April 2020)
-                    </label>
-                    <label>
-                        <input type="radio" name="dateType" value="both" tabindex="4" > Both
-                    </label>
-    
-                    <button type="submit">Calculate Date</button>
-                </form>
-            </div>
+            <h1>Easter Algorithm</h1>
+            <p class="description-text">Type in the year and date format and this will calculate the date of easter on that year!</p>
+            <form method="post" action="cgi-bin/EasterAlgorithm.py">
+                <label class="year-label">Year: <input type="number" id="year" name="year" required></label>
+
+                <label>
+                    <input type="radio" name="dateType" value="numerically" required> Numerically (e.g. 12/04/2020)
+                </label>
+                <label>
+                    <input type="radio" name="dateType" value="verbosely" required> Verbosely (e.g. 12th April 2020)
+                </label>
+                <label>
+                    <input type="radio" name="dateType" value="both" required> Both
+                </label>
+
+                <button type="submit">Calculate Date</button>
+            </form>
         </main>
-        <!-- Footer -->
-        <!-- <footer>
-            <div class="footer-wrapper">
-            </div>
-        </footer> -->
     </body>
 </html>

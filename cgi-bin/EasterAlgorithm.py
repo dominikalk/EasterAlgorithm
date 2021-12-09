@@ -24,27 +24,44 @@ def easter(y):
 
 def get_date_text(the_year):
     if the_year and the_year.isdigit():
-        return f'Date: {easter(int(the_year))}'
+        return f'{easter(int(the_year))}'
     else:
-        return 'Year must be a positive integer to calculate the date of easter.'
+        return None
 
 date_text = get_date_text(year)
 
 print('Content-Type: text/html; charset=utf-8')
 print('')
 print('<!DOCTYPE html>')
-print('<html>')
-print('<head>')
-print('<title>Results</title>')
-print('<link rel="stylesheet" type="text/css" href="../style.css">')
-print('</head>')
-print('<body>')
-print('<a href="../index.html"><span>Easter Algorithm</span></a>')
-print('<h1>results</h1>')
-print('<p>You filled in the following data:<br/>')
-print('Year: %s <br/>' % year)
-print('%s <br/>' % date_text)
-print('Type: %s <br/>' % date_type)
-print('</p>')
-print('</body>')
+print('<html lang="en">')
+print('    <head>')
+print('        <meta charset="utf-8">')
+print('        <title>Easter Algorithm</title>')
+print('        <link rel="stylesheet" type="text/css" href="../style.css">')
+print('        <style>')
+print('            @import url("https://fonts.googleapis.com/css2?family=Inika&display=swap");')
+print('        </style>')
+print('        <meta name="viewport" content="width=device-width, initial-scale=1.0" />')
+print('    </head>')
+print('    <body>')
+print('        <main>')
+print('            <h1>Easter Algorithm</h1>')
+if date_text == None:
+    print('        <p class="return-text">')
+    print('             The date inputed must be a positive whole number. Try again.<br/>')
+    print('        </p>')
+elif date_type not in ['numerically', 'verbosely', 'both']:
+    print('        <p class="return-text">')
+    print('             The date type inputed was not one of the options. <br/>Try again.<br/>')
+    print('        </p>')
+else:
+    print('        <p class="return-text">')
+    print('             The date of easter on the year <b>%s</b> is:<br/>' % year)
+    print('             <b>%s</b> </br>' % date_text)
+    print('        </p>')
+print('            <a href="../index.html">')
+print('                <div class="button"><p>Go back</p></div>')
+print('            </a>')
+print('        </main>')
+print('    </body>')
 print('</html>')
