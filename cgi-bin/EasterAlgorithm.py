@@ -6,6 +6,12 @@ form = cgi.FieldStorage()
 year = form.getvalue('year')
 date_type = form.getvalue('dateType')
 
+def calculate_suffix(day):
+        if 4 <= day <= 20 or 24 <= day <= 30:
+            return "th"
+        else:
+            return ["st", "nd", "rd"][day % 10 - 1]
+
 def easter(y):
     a = y % 19
     b = y // 100
@@ -20,7 +26,14 @@ def easter(y):
     r = (2 * e + 2 * j - k - h + m + 32) % 7
     n = (h - m + r + 90) // 25
     p = (h - m + r + n + 19) % 32
-    return f"{p}/{n}/{y}"
+
+    months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    if date_type == 'numerically':
+        return f"{p}/{n}/{y}"
+    elif date_type == 'verbosely':
+        return f"{p}<sup>{calculate_suffix(p)}</sup> {months[n - 1]} {y}"
+    else:
+        return f"{p}/{n}/{y} or {p}<sup>{calculate_suffix(p)}</sup> {months[n - 1]} {y}"
 
 def get_date_text(the_year):
     if the_year and the_year.isdigit():

@@ -1,7 +1,7 @@
 :root {
-    --primary-color: black;
+    --primary-color: #5B3256;
     --background-color: #c0f0fa;
-    --font-family: 'Inika', sans-serif;
+    --font-family: 'Inika', 'Verdana', sans-serif;
 }
 
 body {
