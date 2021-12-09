@@ -23,7 +23,7 @@ def easter(y):
     return f"{p}/{n}/{y}"
 
 def get_date_text(the_year):
-    if the_year.isdigit():
+    if the_year and the_year.isdigit():
         return f'Date: {easter(int(the_year))}'
     else:
         return 'Year must be a positive integer to calculate the date of easter.'
